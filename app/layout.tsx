@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
+import AsideSm from "@/components/aside-sm";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -27,10 +28,10 @@ export default function RootLayout({
           <div className="flex flex-col">
             <Navbar />
             <div className="flex">
-              <div className="w-16 lg:w-56 border-r h-screen bg-bgSidebar fixed left-0">
-                aside
+              <div className="w-12  border-r h-screen bg-bgSidebar fixed left-0">
+                <AsideSm />
               </div>
-              <main className="flex-1 bg-bgMain ml-16 lg:ml-56 px-4 min-h-screen">
+              <main className="flex-1 bg-bgMain ml-12  px-4 min-h-screen">
                 {children}
               </main>
             </div>
