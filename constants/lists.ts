@@ -1,4 +1,4 @@
-import { Files, BriefcaseBusiness, Mail, Shapes } from "lucide-react";
+import { Files, Shapes, FolderOpenDot, SquareUser } from "lucide-react";
 export const smSidebarLists = [
   {
     label: "about",
@@ -6,11 +6,11 @@ export const smSidebarLists = [
   },
   {
     label: "projects",
-    icon: BriefcaseBusiness,
+    icon: FolderOpenDot,
   },
   {
     label: "contact me",
-    icon: Mail,
+    icon: SquareUser,
   },
   {
     label: "blogs",
