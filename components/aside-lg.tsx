@@ -15,7 +15,7 @@ const AsideLg = () => {
 
   const renderLayout = () => components[activeComponent];
 
-  return <div className="px-2 py-4">{renderLayout()}</div>;
+  return <div className="py-4 w-full">{renderLayout()}</div>;
 };
 
 export default AsideLg;
