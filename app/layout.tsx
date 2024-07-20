@@ -3,7 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
-import AsideSm from "@/components/aside-sm";
+
+import { AppContextProvider } from "@/context/context-provider";
+import MainWrapper from "../main-wrapper";
+import RouterWrapper from "@/route-wrapper";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,17 +28,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col">
-            <Navbar />
-            <div className="flex">
-              <div className="w-12  border-r h-screen bg-bgSidebar fixed left-0">
-                <AsideSm />
+          <AppContextProvider>
+            <div className="flex flex-col">
+              <Navbar />
+              <div className="flex h-screen">
+                <MainWrapper />
+
+                <RouterWrapper>{children}</RouterWrapper>
               </div>
-              <main className="flex-1 bg-bgMain ml-12  px-4 min-h-screen">
-                {children}
-              </main>
             </div>
-          </div>
+          </AppContextProvider>
         </ThemeProvider>
       </body>
     </html>
