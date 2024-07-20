@@ -1,12 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { smSidebarLists } from "@/constants/lists";
-// import {
-//   Tooltip,
-//   TooltipContent,
-//   TooltipProvider,
-//   TooltipTrigger,
-// } from "@/components/ui/tooltip";
+
 import { useStore } from "@/context/context-provider";
 
 const AsideSm = () => {
@@ -37,6 +32,7 @@ const AsideSm = () => {
           return (
             <div key={index} title={item.label}>
               <Icon
+                strokeWidth={1}
                 className={`w-7 h-7 cursor-pointer text-[#858585]  hover:text-white transition-colors duration-75 ease-in ${
                   item.isActive && "text-white"
                 }`}
@@ -53,6 +49,7 @@ const AsideSm = () => {
           return (
             <div key={index} title={item.label}>
               <Icon
+                strokeWidth={1}
                 className={`w-7 h-7 cursor-pointer text-[#858585]  hover:text-white transition-colors duration-75 ease-in ${
                   item.isActive && "text-white"
                 }`}
@@ -61,29 +58,9 @@ const AsideSm = () => {
             </div>
           );
         })}
-        {/* <CircleUserRound className="w-7 h-7 cursor-pointer text-[#858585] hover:text-white transition-colors duration-75 ease-in" />
-        <Settings className="w-7 h-7 cursor-pointer text-[#858585] hover:text-white transition-colors duration-75 ease-in" /> */}
       </div>
     </div>
   );
 };
 
 export default AsideSm;
-
-//  <TooltipProvider key={index}>
-//    <Tooltip delayDuration={400}>
-//      <TooltipTrigger asChild>
-//        <Icon
-//          className="w-7 h-7 cursor-pointer text-[#858585] hover:text-white transition-colors duration-75 ease-in"
-//          onClick={() => handleClick(item.label)}
-//        />
-//      </TooltipTrigger>
-//      <TooltipContent
-//        align="center"
-//        className="absolute left-4 -translate-y-1/2"
-//        style={{ zIndex: "99999" }}
-//      >
-//        <p className="whitespace-nowrap">{item.label}</p>
-//      </TooltipContent>
-//    </Tooltip>
-//  </TooltipProvider>;
