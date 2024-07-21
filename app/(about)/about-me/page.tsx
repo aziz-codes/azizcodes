@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div className="mt-20   flex min-h-screen space-y-1 items-center flex-col">
+    <div className="mt-20 flex min-h-screen space-y-1 items-center flex-col">
       <Image
         height={100}
         width={100}
