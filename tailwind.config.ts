@@ -48,6 +48,7 @@ const config = {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
+
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -55,6 +56,7 @@ const config = {
         bgMain: "#1E1E1E",
         bgSidebar: "#333333",
         bgNavbar: "#323233",
+        bgRoutes: "#1E1E1E",
       },
       borderRadius: {
         lg: "var(--radius)",

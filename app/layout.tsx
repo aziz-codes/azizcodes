@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{ backgroundColor: "#1E1E1E" }}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -31,7 +31,7 @@ export default function RootLayout({
           <AppContextProvider>
             <div className="flex flex-col">
               <Navbar />
-              <div className="flex h-screen">
+              <div className="flex h-screen ">
                 <MainWrapper />
 
                 <RouterWrapper>{children}</RouterWrapper>

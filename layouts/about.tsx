@@ -49,7 +49,7 @@ const About = () => {
   return (
     <div className="flex flex-col select-none w-full">
       <div
-        className="flex items-center py-1 px-3 gap-1 cursor-pointer hover:bg-[#323233] text-sm"
+        className="flex items-center py-1 px-3 space-x-1 cursor-pointer hover:bg-[#323233] text-sm"
         onClick={() => setFolderOpen(!folderOpen)}
       >
         {folderOpen ? (
@@ -77,7 +77,7 @@ const About = () => {
             <Link
               href={item.path}
               key={index}
-              className={`flex items-center text-sm px-4 py-0.5 gap-1.5 hover:bg-[#323233] ${
+              className={`pl-7 flex items-center text-sm px-4 py-0.5 gap-1.5 hover:bg-[#323233] ${
                 pathName === item.path && "bg-[#323233]"
               }`}
             >
