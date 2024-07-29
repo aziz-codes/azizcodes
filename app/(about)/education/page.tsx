@@ -8,7 +8,14 @@ import {
   Projector,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { reactSvgLg, tsSvg, tailwindSvg, threeSvg } from "@/constants/svgs";
+import {
+  reactSvgLg,
+  tsSvg,
+  tailwindSvg,
+  threeSvg,
+  nodejsSvg,
+  mongdbSvg,
+} from "@/constants/svgs";
 const UniversityCard = () => {
   return (
     <div className="bg-[#1E1E1E] text-white p-6 rounded-lg  max-w-4xl mx-auto my-12 relative">
@@ -61,11 +68,10 @@ const UniversityCard = () => {
                 <h4>Tech: </h4>
                 <div className="flex space-x-2">
                   {reactSvgLg}
-
                   {tsSvg}
-
                   {tailwindSvg}
-
+                  {mongdbSvg}
+                  {nodejsSvg}
                   {threeSvg}
                 </div>
               </div>
