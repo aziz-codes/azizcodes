@@ -57,3 +57,26 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom scrollbar  */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  height: 20px;
+  border-radius: 0;
+  background-color: #686868;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2f2e2e;
+}
