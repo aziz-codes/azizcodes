@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 const Contact = () => {
   const pathName = usePathname();
-  const [folderOpen, setFolderOpen] = useState(false);
+  const [folderOpen, setFolderOpen] = useState(true);
   const variants = {
     open: {
       opacity: 1,
