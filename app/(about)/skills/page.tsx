@@ -13,10 +13,10 @@ const Skills = () => {
   }, [input]);
 
   return (
-    <div className="mt-2 flex min-h-screen space-y-1 py-4 px-4 justify-center">
+    <div className="bg-[#1E1E1E] text-white p-6 rounded-lg  max-w-4xl mx-auto my-12 relative">
       <div className="w-full max-w-4xl flex flex-col gap-6">
         <div className="flex items-center justify-between">
-          <div className="border flex w-full max-w-lg py-1.5 px-1 space-x-2 rounded-md items-center">
+          <div className="border flex w-full  py-1.5 px-1 space-x-2 rounded-md items-center">
             <Search className="text-gray-500" />
             <input
               type="text"
@@ -26,7 +26,7 @@ const Skills = () => {
             />
           </div>
         </div>
-        <div className="flex flex-wrap gap-4 ">
+        <div className="flex flex-wrap gap-4 justify-center">
           {filteredSkills.map((skill) => (
             <div
               className="px-2 py-1.5 rounded-full border text-[12px]"
