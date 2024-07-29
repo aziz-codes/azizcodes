@@ -42,12 +42,15 @@ const About = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="text-center relative top-12 line-clamp-4 max-w-2xl text-gray-400 font-[200]"
+        className="text-center relative top-12 line-clamp-6 max-w-2xl text-gray-400 font-[200]"
       >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium
-        culpa vel soluta error ullam labore? Et eaque quas pariatur fugit
-        asperiores! Consequatur, vitae voluptate. Ut beatae molestiae
-        exercitationem magnam libero.
+        I am a Frontend Web Developer specializing in creating dynamic,
+        user-centered websites and applications. Adept at translating complex
+        design concepts into responsive, high-performance code. Passionate about
+        crafting seamless user experiences with a keen eye for detail and a
+        strong understanding of modern web technologies. Experienced in
+        collaborating with cross-functional teams to deliver innovative
+        solutions and enhance digital interactions.
       </motion.p>
 
       {/* Animated Social Icons */}
