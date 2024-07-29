@@ -21,5 +21,4 @@ const MainWrapper = () => {
     </>
   );
 };
-
 export default MainWrapper;
