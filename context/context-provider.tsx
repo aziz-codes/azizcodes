@@ -1,5 +1,11 @@
 "use client";
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 
 interface ListContextType {
   lists: any[];
@@ -30,6 +36,16 @@ export const AppContextProvider: React.FC<{ children: ReactNode }> = ({
   const [lists, setLists] = useState<any[]>([]);
   const [activeComponent, setActiveComponent] = useState<string>("about");
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKeyUp = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.key === "b") {
+        setOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keyup", handleKeyUp);
+    return () => window.removeEventListener("keyup", handleKeyUp);
+  }, []);
 
   return (
     <AppContext.Provider
