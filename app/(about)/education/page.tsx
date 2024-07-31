@@ -18,11 +18,10 @@ import {
 } from "@/constants/svgs";
 const UniversityCard = () => {
   return (
-    <div className="bg-[#1E1E1E] text-white p-6 rounded-lg  max-w-4xl mx-auto my-12 relative">
-      <h2 className="text-3xl font-bold mb-6 text-gray-100">Education</h2>
+    <div className="bg-[#1E1E1E] text-white p-4 rounded-lg w-full  max-w-2xl xl:max-w-4xl mx-auto xl:my-12 my-3 relative">
       <motion.div
         className="bg-[#2C2C2C] p-8 rounded-lg shadow-lg relative"
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.1 }}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
