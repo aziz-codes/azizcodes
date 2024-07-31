@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import {
   Card,
   CardContent,
@@ -11,7 +11,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MousePointer2 } from "lucide-react";
 import { githubSvg } from "@/constants/svgs";
-import { Variants } from "framer-motion";
+
 interface ProjectProps {
   thumbnail: string;
   title: string;
@@ -20,31 +20,17 @@ interface ProjectProps {
   link: string;
   githubLink: boolean;
 }
-const ProjectCard = ({ project }: { project: ProjectProps }) => {
-  const cardVariants: Variants = {
-    initial: { opacity: 0, y: 20 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeInOut" },
-    },
-    whileHover: {
-      scale: 1.05,
-      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.15)",
-      transition: { duration: 0.3 },
-    },
-  };
-
+const ProjectCard = ({ project }: { project: ProjectProps; index: number }) => {
   return (
-    <Card className="w-full md:w-[350px] bg-transparent">
+    <Card className="bg-transparent shadow-lg w-80 hover:ring-1 ring-slate-700">
       <CardHeader className="p-0">
         <div className="relative w-full h-52">
           <Image
             src={project.thumbnail}
             fill
-            alt="thumnail"
+            alt="thumbnail"
             loading="lazy"
-            className="object-cover"
+            className="object-cover rounded-md"
           />
           <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
         </div>
