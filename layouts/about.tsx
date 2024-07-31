@@ -17,7 +17,7 @@ const About = () => {
   const list = [
     {
       label: "index.tsx",
-      path: "/about-me",
+      path: "/about",
     },
     {
       label: "education.tsx",
