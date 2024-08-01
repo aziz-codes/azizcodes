@@ -1,12 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import { smSidebarLists } from "@/constants/lists";
-
+import { usePathname } from "next/navigation";
 import { useStore } from "@/context/context-provider";
 
+import Link from "next/link";
 const AsideSm = () => {
   const [lists, setLists] = useState(smSidebarLists);
   const { setActiveComponent, setOpen } = useStore();
+  const pathname = usePathname();
   const handleClick = (label: string, idx: number) => {
     const updatedItem = lists.map((list, index) => ({
       ...list,
@@ -47,15 +49,14 @@ const AsideSm = () => {
           let index = 4 + id;
           const Icon = item.icon;
           return (
-            <div key={index} title={item.label}>
+            <Link key={index} title={item.label} href="/github">
               <Icon
                 strokeWidth={1}
                 className={`w-7 h-7 cursor-pointer text-[#858585]  hover:text-white transition-colors duration-75 ease-in ${
-                  item.isActive && "text-white"
+                  pathname === "/github" && "text-white"
                 }`}
-                onClick={() => handleClick(item.label, index)}
               />
-            </div>
+            </Link>
           );
         })}
       </div>
