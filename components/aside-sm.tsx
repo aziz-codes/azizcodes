@@ -33,7 +33,7 @@ const AsideSm = () => {
             <div key={index} title={item.label}>
               <Icon
                 strokeWidth={1}
-                className={`w-7 h-7 cursor-pointer text-[#858585]  hover:text-white transition-colors duration-75 ease-in ${
+                className={`w-6 h-6 cursor-pointer text-[#858585]  hover:text-white transition-colors duration-75 ease-in ${
                   item.isActive && "text-white"
                 }`}
                 onClick={() => handleClick(item.label, index)}

@@ -1,6 +1,13 @@
 "use client";
 import React from "react";
-import { About, Contact, Blogs, Projects } from "@/layouts/index";
+import {
+  About,
+  Contact,
+  Blogs,
+  Projects,
+  Experience,
+  Github,
+} from "@/layouts/index";
 import { useStore } from "@/context/context-provider";
 
 const AsideLg = () => {
@@ -11,6 +18,8 @@ const AsideLg = () => {
     contact: <Contact />,
     blogs: <Blogs />,
     projects: <Projects />,
+    experience: <Experience />,
+    github: <Github />,
   };
 
   const renderLayout = () => components[activeComponent];

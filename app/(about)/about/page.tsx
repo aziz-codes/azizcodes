@@ -42,7 +42,7 @@ const About = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="text-center relative top-12 line-clamp-6 max-w-2xl text-gray-400 font-[200]"
+        className="text-center relative top-5 line-clamp-6 max-w-2xl text-gray-400 font-[200]"
       >
         I am a Frontend Web Developer specializing in creating dynamic,
         user-centered websites and applications. Adept at translating complex
@@ -58,7 +58,7 @@ const About = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
-        className="relative top-48 flex items-center space-x-7"
+        className="relative top-14 flex items-center space-x-7"
       >
         {socialIcons.map((icon, index) => {
           const Icon = icon.icon;

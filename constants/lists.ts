@@ -1,15 +1,16 @@
 import {
-  Files,
   Shapes,
   FolderOpenDot,
-  SquareUser,
   CircleUserRound,
   Settings,
+  Briefcase,
+  GithubIcon,
 } from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 export const smSidebarLists = [
   {
     label: "about",
-    icon: Files,
+    icon: CircleUserRound,
     isActive: true,
   },
   {
@@ -18,8 +19,8 @@ export const smSidebarLists = [
     isActive: false,
   },
   {
-    label: "contact",
-    icon: SquareUser,
+    label: "experience",
+    icon: Briefcase,
     isActive: false,
   },
   {
@@ -28,8 +29,8 @@ export const smSidebarLists = [
     isActive: false,
   },
   {
-    label: "profile",
-    icon: CircleUserRound,
+    label: "github",
+    icon: GitHubLogoIcon,
     isActive: false,
   },
   {

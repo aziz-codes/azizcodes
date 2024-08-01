@@ -1,7 +1,6 @@
 "use client";
-
 import * as React from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import {
   EnvelopeClosedIcon,
   GearIcon,
@@ -21,11 +20,12 @@ import {
 import Link from "next/link";
 import { links } from "@/constants/nav-links";
 import { suggestions } from "@/constants/command-list";
-import { Search } from "lucide-react";
+import { LayoutPanelLeft, Search } from "lucide-react";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
+  const pathName = usePathname();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -43,12 +43,14 @@ const Navbar = () => {
     setOpen(false);
   };
   return (
-    <div className="h-7 shadow-md w-full bg-bgNavbar border-b sticky top-0 left-0 z-50 flex items-center justify-between">
+    <div className="h-7 shadow-md w-full bg-bgNavbar border-b sticky top-0 left-0 z-50 flex items-center justify-between px-3">
       <div className="flex space-x-1 items-center flex-1">
         {links.map((link) => (
           <Link
             href={`/${link}`}
-            className="text-[10px] xl:text-sm px-2 py-0.5 rounded-sm hover:bg-secondary"
+            className={`text-[10px] xl:text-sm px-2 py-0.5 rounded-sm hover:bg-secondary ${
+              pathName === `/${link}` && "text-sky-500"
+            }`}
             key={link}
           >
             {link}
@@ -115,7 +117,9 @@ const Navbar = () => {
         </CommandDialog>
       </>
 
-      <div className="flex-1"></div>
+      <div className="flex-1 justify-end flex items-center">
+        <LayoutPanelLeft className="w-3 h-3" />
+      </div>
     </div>
   );
 };
