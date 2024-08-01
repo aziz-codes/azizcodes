@@ -22,7 +22,7 @@ interface ProjectProps {
 }
 const ProjectCard = ({ project }: { project: ProjectProps; index: number }) => {
   return (
-    <Card className="bg-transparent shadow-lg w-80 hover:ring-1 ring-slate-700">
+    <Card className="bg-transparent shadow-lg w-80 hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in">
       <CardHeader className="p-0">
         <div className="relative w-full h-52">
           <Image
