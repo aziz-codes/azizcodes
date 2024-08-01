@@ -17,7 +17,7 @@ const ContactMe = () => {
         <textarea
           className="col-span-12 px-2 py-1.5 rounded-md bg-transparent outline-none border"
           rows={6}
-          placeholder="We'd love to hear from you"
+          placeholder="I'd love to hear from you..."
         ></textarea>
         <button className="col-span-2 py-1.5 rounded-md border hover:bg-bgSidebar transition-colors duration-150 ease-linear">
           Send
