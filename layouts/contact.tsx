@@ -48,7 +48,7 @@ const Contact = () => {
           <FolderClosed className="h-4 w-4" stroke="#4A90E2" />
         )}
 
-        <label>contact</label>
+        <label className="cursor-pointer text-sm">contact</label>
       </div>
       {folderOpen && (
         <motion.div
@@ -64,7 +64,8 @@ const Contact = () => {
               pathName === "/contact-me" && "bg-[#323233]"
             }`}
           >
-            {reactSvg} contact-me.tsx
+            {reactSvg}{" "}
+            <span className="text-sm font-light">contact-me.tsx</span>
           </Link>
         </motion.div>
       )}

@@ -63,7 +63,7 @@ const About = () => {
           <FolderClosed className="h-4 w-4" stroke="#4A90E2" />
         )}
 
-        <label>about</label>
+        <label className="cursor-pointer text-sm">about</label>
       </div>
       {folderOpen && (
         <motion.div
@@ -81,7 +81,8 @@ const About = () => {
                 pathName === item.path && "bg-[#323233]"
               }`}
             >
-              {reactSvg} {item.label}
+              {reactSvg}{" "}
+              <span className="text-sm font-light">{item.label}</span>
             </Link>
           ))}
         </motion.div>
