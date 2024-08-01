@@ -7,12 +7,14 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Label } from "./ui/label";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { MousePointer2 } from "lucide-react";
 import { githubSvg } from "@/constants/svgs";
 
 interface ProjectProps {
+  id: number;
   thumbnail: string;
   title: string;
   description: string;
@@ -21,8 +23,12 @@ interface ProjectProps {
   githubLink: boolean;
 }
 const ProjectCard = ({ project }: { project: ProjectProps; index: number }) => {
+  const router = useRouter();
   return (
-    <Card className="bg-transparent shadow-lg w-80 hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in">
+    <Card
+      className="bg-transparent shadow-lg w-80 hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in cursor-pointer"
+      onClick={() => router.push(`/projects/${project.id}`)}
+    >
       <CardHeader className="p-0">
         <div className="relative w-full h-52">
           <Image
