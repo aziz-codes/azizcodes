@@ -1,14 +1,11 @@
 "use client";
 
 import * as React from "react";
+import { useRouter } from "next/navigation";
 import {
-  CalendarIcon,
-  CodeIcon,
   EnvelopeClosedIcon,
-  FaceIcon,
   GearIcon,
   PersonIcon,
-  RocketIcon,
 } from "@radix-ui/react-icons";
 
 import {
@@ -22,10 +19,13 @@ import {
   CommandShortcut,
 } from "@/components/ui/command";
 import Link from "next/link";
+import { links } from "@/constants/nav-links";
+import { suggestions } from "@/constants/command-list";
 import { Search } from "lucide-react";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
+  const router = useRouter();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -38,10 +38,13 @@ const Navbar = () => {
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, []);
-  const links = ["about", "skills", "education", "projects", "blogs"];
+  const handleItemClick = (path: string) => {
+    router.push(path);
+    setOpen(false);
+  };
   return (
     <div className="h-7 shadow-md w-full bg-bgNavbar border-b sticky top-0 left-0 z-50 flex items-center justify-between">
-      <div className="flex space-x-1 items-center">
+      <div className="flex space-x-1 items-center flex-1">
         {links.map((link) => (
           <Link
             href={`/${link}`}
@@ -55,7 +58,7 @@ const Navbar = () => {
 
       <>
         <div
-          className="flex items-center border px-2 py-[1px] space-x-2 rounded-sm bg-transparent w-[40%] border-gray-500 justify-between cursor-pointer hover:bg-muted hover:border-slate-700"
+          className="flex items-center border px-2 py-[1px] space-x-2 rounded-sm bg-transparent flex-1  border-gray-500 justify-between cursor-pointer hover:bg-muted hover:border-slate-700"
           onClick={() => setOpen(true)}
         >
           <Search className="w-4 h-4 text-muted-foreground " />
@@ -72,23 +75,26 @@ const Navbar = () => {
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Suggestions">
-              <Link href="/about">
-                <CommandItem className="!py-1 my-2">
-                  <PersonIcon className="mr-2 h-4 w-4" />
-                  <span>About Me</span>
-                </CommandItem>
-              </Link>
-              <CommandItem className="!py-1 my-2">
-                <CodeIcon className="mr-2 h-4 w-4" />
-                <span>Skills</span>
-              </CommandItem>
-              <CommandItem className="!py-1 my-2">
-                <RocketIcon className="mr-2 h-4 w-4" />
-                <span>Launch</span>
-              </CommandItem>
+              {suggestions.map((suggestion, index) => {
+                const Icon = suggestion.icon;
+                return (
+                  <CommandItem
+                    className="!py-1 my-2  cursor-pointer"
+                    key={index}
+                  >
+                    <div
+                      className="flex items-center space-x-2"
+                      onClick={() => handleItemClick(suggestion.path)}
+                    >
+                      <Icon className="!w-4 !h-4" strokeWidth={0.9} />
+                      <span className="text-xs">{suggestion.label}</span>
+                    </div>
+                  </CommandItem>
+                );
+              })}
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Settings">
+            <CommandGroup heading="Pages">
               <CommandItem className="!py-1 my-2">
                 <PersonIcon className="mr-2 h-4 w-4" />
                 <span>Profile</span>
@@ -109,7 +115,7 @@ const Navbar = () => {
         </CommandDialog>
       </>
 
-      <div>right</div>
+      <div className="flex-1"></div>
     </div>
   );
 };
