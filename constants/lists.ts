@@ -33,9 +33,9 @@ export const smSidebarLists = [
     icon: GitHubLogoIcon,
     isActive: false,
   },
-  {
-    label: "settings",
-    icon: Settings,
-    isActive: false,
-  },
+  // {
+  //   label: "settings",
+  //   icon: Settings,
+  //   isActive: false,
+  // },
 ];

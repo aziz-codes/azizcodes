@@ -6,7 +6,7 @@ import {
   GearIcon,
   PersonIcon,
 } from "@radix-ui/react-icons";
-
+import { useStore } from "@/context/context-provider";
 import {
   CommandDialog,
   CommandEmpty,
@@ -23,6 +23,7 @@ import { suggestions } from "@/constants/command-list";
 import { LayoutPanelLeft, Search } from "lucide-react";
 
 const Navbar = () => {
+  const { open: sidebarOpen, setOpen: setSidebarOpen } = useStore();
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
   const pathName = usePathname();
@@ -60,7 +61,7 @@ const Navbar = () => {
 
       <>
         <div
-          className="flex items-center border px-2 py-[1px] space-x-2 rounded-sm bg-transparent flex-1  border-gray-500 justify-between cursor-pointer hover:bg-muted hover:border-slate-700"
+          className="flex items-center border px-2 py-[1px] space-x-2 rounded-sm bg-transparent flex-1  border-[#3f3f3f] justify-between cursor-pointer hover:bg-muted hover:border-slate-700"
           onClick={() => setOpen(true)}
         >
           <Search className="w-4 h-4 text-muted-foreground " />
@@ -73,7 +74,7 @@ const Navbar = () => {
           <div></div>
         </div>
         <CommandDialog open={open} onOpenChange={setOpen}>
-          <CommandInput placeholder="Search pages by name" />
+          <CommandInput placeholder="Explore the portfolio" />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Suggestions">
@@ -117,8 +118,17 @@ const Navbar = () => {
         </CommandDialog>
       </>
 
-      <div className="flex-1 justify-end flex items-center">
-        <LayoutPanelLeft className="w-3 h-3" />
+      <div className="w-[20%] justify-end flex items-center">
+        <div
+          className={`h-5 w-5 rounded-sm hover:bg-[#3f3f3f] flex items-center justify-center ${
+            sidebarOpen && "bg-[#3f3f3f]"
+          }`}
+        >
+          <LayoutPanelLeft
+            className="w-3 h-3 cursor-pointer"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          />
+        </div>
       </div>
     </div>
   );

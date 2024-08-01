@@ -1,9 +1,9 @@
-import { CodeXml, SquareKanban, University, User } from "lucide-react";
+import { CodeXml, SquareKanban, Briefcase, UserCircle } from "lucide-react";
 export const suggestions = [
   {
     label: "About Me",
     path: "/about",
-    icon: User,
+    icon: UserCircle,
   },
   {
     label: "Skills",
@@ -11,9 +11,9 @@ export const suggestions = [
     icon: CodeXml,
   },
   {
-    label: "Education",
-    path: "/education",
-    icon: University,
+    label: "Experience",
+    path: "/experience",
+    icon: Briefcase,
   },
   {
     label: "Projects",
@@ -22,7 +22,7 @@ export const suggestions = [
   },
 ];
 
-export const pages = [
+export const projects = [
   {
     label: "",
   },
