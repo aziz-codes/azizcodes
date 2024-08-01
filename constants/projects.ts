@@ -53,3 +53,22 @@ export const projects = [
     githubLink: false,
   },
 ];
+
+export const projectFiles = [
+  {
+    label: "index.tsx",
+    path: "/projects",
+  },
+  {
+    label: "secure-eye.tsx",
+    path: "/secure-eye",
+  },
+  {
+    label: "wiserbee.tsx",
+    path: "/wiserbee",
+  },
+  {
+    label: "icanread-mv.tsx",
+    path: "/icanread-mv",
+  },
+];

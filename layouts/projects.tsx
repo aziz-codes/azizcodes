@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { reactSvg } from "@/constants/svgs";
 import { motion } from "framer-motion";
+import { projectFiles } from "@/constants/projects";
 import {
   ChevronDown,
   ChevronRight,
@@ -59,14 +60,18 @@ const Projects = () => {
           exit="closed"
           variants={variants}
         >
-          <Link
-            href="/projects"
-            className={`pl-7 flex items-center text-sm px-4 py-0.5 gap-1.5 hover:bg-[#323233] ${
-              pathName === "/project" && "bg-[#323233]"
-            }`}
-          >
-            {reactSvg} <span className="text-sm font-light">projects.tsx</span>
-          </Link>
+          {projectFiles.map((project, index) => (
+            <Link
+              href={project.path}
+              className={`pl-7 flex items-center text-sm px-4 py-0.5 gap-1.5 hover:bg-[#323233] ${
+                pathName === project.path && "bg-[#323233]"
+              }`}
+              key={index}
+            >
+              {reactSvg}{" "}
+              <span className="text-sm font-light">{project.label}</span>
+            </Link>
+          ))}
         </motion.div>
       )}
     </div>
