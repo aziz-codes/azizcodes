@@ -15,7 +15,7 @@ const Github = () => {
     ssr: false,
   });
   return (
-    <div className="flex flex-col space-y-4 w-full mt-3">
+    <div className="flex flex-col items-center border  space-y-4 w-full  mt-3">
       <UserCard />
       <Contributions />
     </div>

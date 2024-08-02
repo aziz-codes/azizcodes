@@ -75,7 +75,7 @@ const UserCard = () => {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-3 py-3 rounded-sm my-4">
-      <div className="w-full md:flex-row flex-col space-y-2 justify-between items-center flex-wrap">
+      <div className="w-full flex md:flex-row flex-col space-y-2 justify-between items-center ">
         <div className="flex items-center gap-3">
           <div>
             <Avatar className="h-28 w-28">
