@@ -93,7 +93,7 @@ const UserCard = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center space-x-3 justify-center">
+        <div className="flex items-center space-x-3 justify-center md:justify-end">
           <div className="flex items-center space-x-2">
             <BookOpen className="text-gray-400 w-4 h-4" />
             <span className="text-[10px] text-gray-400">
@@ -119,7 +119,6 @@ const UserCard = () => {
           <span className="text-gray-400">{user?.followers}</span> followers
         </p>
         <p>
-          {" "}
           <span className="text-gray-400">{user?.following}</span> following
         </p>
       </div>
