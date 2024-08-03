@@ -5,7 +5,7 @@ import { projects } from "@/constants/projects";
 
 const Projects = () => {
   return (
-    <div className="flex gap-6  flex-wrap mt-8 justify-center py-4">
+    <div className="flex gap-6  flex-wrap mt-8 justify-around py-4">
       {projects.map((project, index) => (
         <ProjectCard project={project} key={index} index={index} />
       ))}

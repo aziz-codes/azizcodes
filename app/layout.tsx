@@ -31,7 +31,7 @@ export default function RootLayout({
           <AppContextProvider>
             <div className="flex flex-col">
               <Navbar />
-              <div className="flex h-screen ">
+              <div className="flex min-h-screen ">
                 <MainWrapper />
 
                 <RouterWrapper>{children}</RouterWrapper>
