@@ -21,9 +21,9 @@ const SingleProject = () => {
   }
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-0 p-0 py-2 md:p-6">
       <div className="flex flex-col items-center">
-        <div className="w-full max-w-2xl h-80 relative mb-6">
+        <div className="w-full max-w-xs sm:max-w-full h-80 relative mb-6">
           <Image
             src={project.thumbnail}
             alt={project.title}
@@ -32,7 +32,7 @@ const SingleProject = () => {
             className="rounded-lg shadow-lg border"
           />
         </div>
-        <h1 className="text-4xl font-bold text-gray-200 mb-4">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-200 mb-4">
           {project.title}
         </h1>
         <div className="flex space-x-4 mb-6 items-center">
@@ -44,12 +44,12 @@ const SingleProject = () => {
           <LinkIcon className="w-4" />{" "}
           <Link
             href={project.link}
-            className="font-thin italic hover:text-sky-500 transition-colors duration-150 ease-in-out"
+            className="font-thin text-xs sm:text-sm italic hover:text-sky-500 transition-colors duration-150 ease-in-out"
           >
             {project.link}
           </Link>
         </div>
-        <p className="text-gray-400 text-lg mb-6 max-w-4xl text-center px-2">
+        <p className="text-gray-400 text-xs mb-6 max-w-lg md:max-w-4xl text-start px-2">
           {project.description}
         </p>
       </div>

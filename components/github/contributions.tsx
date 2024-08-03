@@ -7,8 +7,10 @@ const Contributions = () => {
   const username = "aziz-codes";
   return (
     <div
-      className={`my-3 flex justify-center   overflow-x-auto ${
-        open ? "max-w-2xl" : "w-full"
+      className={`my-3 flex justify-center overflow-x-auto ${
+        open
+          ? "max-w-52 sm:max-w-sm md:max-w-2xl"
+          : "w-56 sm:w-[500px] md:w-full"
       }`}
     >
       <GitHubCalendar username={username} />

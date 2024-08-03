@@ -74,9 +74,9 @@ const UserCard = () => {
   }, []);
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-3 py-3 rounded-sm my-4">
-      <div className="w-full flex md:flex-row flex-col space-y-2 justify-between items-center ">
-        <div className="flex items-center gap-3">
+    <div className="mx-auto w-full max-w-4xl  py-3 rounded-sm my-4">
+      <div className="w-full flex md:flex-row flex-col space-y-2 justify-between items-start md:items-center">
+        <div className="flex flex-col sm:flex-row items-center  gap-3">
           <div>
             <Avatar className="h-28 w-28">
               <AvatarFallback className="capitalize">
@@ -85,15 +85,15 @@ const UserCard = () => {
               <AvatarImage src={user?.avatar} loading="lazy" />
             </Avatar>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center sm:items-start">
             <h5 className="font-semibold">{user?.name}</h5>
             <p className="text-xs italic ">{user?.username}</p>
-            <p className="w-auto max-w-xs line-clamp-5 md:line-clamp-3 text-[10px] text-muted-foreground">
+            <p className="w-auto max-w-xs line-clamp-2 md:line-clamp-3 text-[10px] text-muted-foreground">
               {user?.bio}
             </p>
           </div>
         </div>
-        <div className="flex items-center space-x-3 justify-center md:justify-end">
+        <div className="flex items-center space-x-3  mx-auto md:justify-end">
           <div className="flex items-center space-x-2">
             <BookOpen className="text-gray-400 w-4 h-4" />
             <span className="text-[10px] text-gray-400">

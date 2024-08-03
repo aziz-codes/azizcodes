@@ -26,7 +26,7 @@ const ProjectCard = ({ project }: { project: ProjectProps; index: number }) => {
   const router = useRouter();
   return (
     <Card
-      className="bg-transparent shadow-lg w-80 hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in cursor-pointer"
+      className="bg-transparent shadow-lg w-60 sm:w-80 hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in cursor-pointer"
       onClick={() => router.push(`/projects/${project.id}`)}
     >
       <CardHeader className="p-0">
@@ -68,7 +68,9 @@ const ProjectCard = ({ project }: { project: ProjectProps; index: number }) => {
               href={project.link}
               className="flex items-center space-x-2 hover:text-blue-500 transition-colors duration-150 ease-out"
             >
-              <Label className="cursor-pointer">Check Live Site</Label>
+              <Label className="cursor-pointer hidden md:block">
+                Check Live Site
+              </Label>
               <MousePointer2 className="w-5 rotate-90" />
             </Link>
           )}
