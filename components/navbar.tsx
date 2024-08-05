@@ -61,7 +61,7 @@ const Navbar = () => {
           <Link
             href={`/${link}`}
             className={`text-[10px] xl:text-sm px-2 py-0.5 rounded-sm hover:bg-[#3f3f3f] ${
-              pathName === `/${link}` && "text-sky-500"
+              pathName === `/${link}` && "text-slate-400"
             }`}
             key={link}
           >
