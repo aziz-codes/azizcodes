@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { reactSvg } from "@/constants/svgs";
+import { nodejsSvg, reactSvg } from "@/constants/svgs";
 import { usePathname } from "next/navigation";
 import {
   ChevronDown,
@@ -117,6 +117,15 @@ const About = () => {
           )}
         </>
       ))}
+      <Link
+        href="/meta"
+        className={`pl-7 flex items-center text-sm px-4 py-0.5 gap-1.5 hover:bg-[#323233] ${
+          pathName === "/meta" && "bg-[#323233]"
+        }`}
+      >
+        {nodejsSvg}
+        <span className="text-sm font-light">package.json</span>
+      </Link>
     </div>
   );
 };

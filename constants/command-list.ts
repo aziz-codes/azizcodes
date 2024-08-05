@@ -21,9 +21,3 @@ export const suggestions = [
     icon: SquareKanban,
   },
 ];
-
-export const projects = [
-  {
-    label: "",
-  },
-];

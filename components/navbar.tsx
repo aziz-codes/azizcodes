@@ -1,11 +1,7 @@
 "use client";
 import * as React from "react";
 import { useRouter, usePathname } from "next/navigation";
-import {
-  EnvelopeClosedIcon,
-  GearIcon,
-  PersonIcon,
-} from "@radix-ui/react-icons";
+
 import { motion } from "framer-motion";
 import { useStore } from "@/context/context-provider";
 import {
@@ -16,8 +12,8 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
+import { projects } from "@/constants/projects";
 import Link from "next/link";
 import { links } from "@/constants/nav-links";
 import { suggestions } from "@/constants/command-list";
@@ -145,22 +141,16 @@ const Navbar = () => {
               })}
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Pages">
-              <CommandItem className="!py-1 my-2">
-                <PersonIcon className="mr-2 h-4 w-4" />
-                <span>Profile</span>
-                <CommandShortcut>⌘P</CommandShortcut>
-              </CommandItem>
-              <CommandItem className="!py-1 my-2">
-                <EnvelopeClosedIcon className="mr-2 h-4 w-4" />
-                <span>Mail</span>
-                <CommandShortcut>⌘B</CommandShortcut>
-              </CommandItem>
-              <CommandItem className="!py-1 my-2">
-                <GearIcon className="mr-2 h-4 w-4" />
-                <span>Settings</span>
-                <CommandShortcut>⌘S</CommandShortcut>
-              </CommandItem>
+            <CommandGroup heading="Projects">
+              {projects.map((project, index) => (
+                <CommandItem className="!py-1 my-2  cursor-pointer" key={index}>
+                  <div
+                    onClick={() => handleItemClick(`/projects/${project.id}`)}
+                  >
+                    <span>{project.title}</span>
+                  </div>
+                </CommandItem>
+              ))}
             </CommandGroup>
           </CommandList>
         </CommandDialog>
