@@ -11,7 +11,17 @@
     "backend": ["Node JS", "PHP", "Express", "Sockets", "Next JS"],
     "frontend": ["React", "Angular", "Next JS"],
     "css": ["Bootstrap", "Tailwindcss"],
-    "frameworks": ["MUI", "ChakraUI", "Aceternity"],
-    "others": ["Github", "Docker", "Shadcn", "Prisma", "Webrtc"]
+    "frameworks": ["MUI", "ChakraUI"],
+    "cms": ["Wordpress"],
+    "others": [
+      "Github",
+      "Docker",
+      "Shadcn",
+      "Prisma",
+      "Webrtc",
+      "Elementor",
+      "Woocommerce",
+      "Aceternity"
+    ]
   }
 }
