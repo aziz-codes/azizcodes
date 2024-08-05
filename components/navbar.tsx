@@ -147,7 +147,7 @@ const Navbar = () => {
                   <div
                     onClick={() => handleItemClick(`/projects/${project.id}`)}
                   >
-                    <span>{project.title}</span>
+                    <span className="text-xs">{project.title}</span>
                   </div>
                 </CommandItem>
               ))}
