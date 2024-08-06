@@ -55,7 +55,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="h-7 shadow-md w-full bg-bgNavbar border-b !sticky select-none top-0 left-0 z-50 flex items-center justify-between px-3 gap-5">
+    <div className="h-7 shadow-md w-full bg-bgNavbar border-b !sticky select-none top-0 left-0 z-50 flex items-center justify-between px-2 gap-5">
       <div className="space-x-1 items-center   hidden md:flex">
         {links.map((link) => (
           <Link
