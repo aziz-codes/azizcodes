@@ -2,11 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BookOpen, CalendarDays, MapPin } from "lucide-react";
-interface GithubProps {
-  loading: boolean;
 
-  error: null | string;
-}
 interface UserProps {
   avatar: string;
   username: string;
@@ -19,11 +15,6 @@ interface UserProps {
   joined: string;
 }
 const UserCard = () => {
-  const [apiStatus, setApiStatus] = useState<GithubProps>({
-    loading: false,
-    error: null,
-  });
-
   const [user, setUser] = useState<UserProps>();
 
   const username = "aziz-codes";
@@ -31,13 +22,11 @@ const UserCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setApiStatus({ ...apiStatus, loading: true });
         const response = await fetch(
           `https://api.github.com/users/${username}`
         );
         const data = await response.json();
 
-        setApiStatus({ ...apiStatus, loading: false });
         const {
           avatar_url,
           login,
@@ -63,11 +52,6 @@ const UserCard = () => {
         setUser(obj);
       } catch (err) {
         console.log(err);
-        setApiStatus({
-          ...apiStatus,
-          loading: false,
-          error: "something went wrong",
-        });
       }
     };
     fetchData();
