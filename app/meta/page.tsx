@@ -9,7 +9,11 @@ const JsonViewer = () => {
 
   return (
     <div className="py-3">
-      <SyntaxHighlighter language="json" style={a11yDark}>
+      <SyntaxHighlighter
+        language="json"
+        style={a11yDark}
+        customStyle={{ borderRadius: "7px" }}
+      >
         {formattedJson}
       </SyntaxHighlighter>
     </div>
