@@ -12,9 +12,7 @@ import {
   wordpressSvg,
   chatSvg,
   reactSvgLg,
-  tsSvg,
   tailwindSvg,
-  threeSvg,
   framerSvg,
   webrtcSvg,
   tensorFlow,
@@ -86,7 +84,7 @@ export const projects = [
     description:
       "This Instagram clone is built with Next.js, Tailwind CSS, Recoil, and Firebase, offering a fast and responsive user experience. The app features real-time updates, user authentication, and secure data storage powered by Firebase. With Recoil managing the global state, users can seamlessly navigate through the app, sharing photos, liking posts, and following other users, all within a beautifully designed interface.",
     tools: [nextjsSvg, tailwindSvg, googleSvg, firebaseSvg, recoilSvg],
-    link: "https://github.com/aziz-codes/spacepark-feed-react",
+    link: "https://github.com/aziz-codes/insta-clone",
     githubLink: true,
   },
 ];
