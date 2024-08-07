@@ -29,7 +29,7 @@ const HomePage = () => {
         <span className="text-[9px]">Projects</span>
       </Link>
       <Link
-        href="/projects"
+        href="/experience"
         className="flex items-center text-sky-500   space-x-2 ml-3"
       >
         <Briefcase className="w-3 h-3" strokeWidth={1} />
