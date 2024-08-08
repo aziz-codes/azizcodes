@@ -68,12 +68,14 @@ Make sure you have the following software installed on your machine:
 
 4. **Install the dependencies**
 
-   ```npm i
+   ```bash
+   npm i
 
    ```
 
 5. **Start the Development server by running**
 
-   ```npm run dev
+   ```bash
+   npm run dev
 
    ```
