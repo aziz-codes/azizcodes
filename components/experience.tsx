@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Avatar as ProfileImage } from "@/constants/images";
+
 export default function Component() {
   return (
     <Card className="w-full max-w-full bg-[#1E1E1E]">
@@ -21,12 +22,12 @@ export default function Component() {
             Senior Software Engineer, 2020 - Present
           </p>
           <p className="text-muted-foreground">
-            As a Senior Software Engineer at Acme Inc.I was responsible for
-            leading the development of the companys flagship web application. I
-            designed and implemented new features, optimized performance, and
-            mentored junior developers on the team. I also played a key role in
-            transitioning the application to a microservices architecture,
-            improving scalability and reliability.
+            As a Senior Software Engineer at Acme Inc., I was responsible for
+            leading the development of the company&apos;s flagship web
+            application. I designed and implemented new features, optimized
+            performance, and mentored junior developers on the team. I also
+            played a key role in transitioning the application to a
+            microservices architecture, improving scalability and reliability.
           </p>
         </div>
         <div>
@@ -49,11 +50,11 @@ export default function Component() {
           </p>
           <p className="text-muted-foreground">
             As a Junior Software Engineer at Stark Industries, I worked on
-            building and maintaining web applications for the companys internal
-            and external customers. I gained valuable experience in full-stack
-            development, working with various technologies and frameworks, and
-            collaborating with senior engineers to deliver high-quality
-            software.
+            building and maintaining web applications for the company&apos;s
+            internal and external customers. I gained valuable experience in
+            full-stack development, working with various technologies and
+            frameworks, and collaborating with senior engineers to deliver
+            high-quality software.
           </p>
         </div>
       </CardContent>
