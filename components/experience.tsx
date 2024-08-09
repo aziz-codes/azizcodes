@@ -21,8 +21,8 @@ export default function Component() {
             Senior Software Engineer, 2020 - Present
           </p>
           <p className="text-muted-foreground">
-            As a Senior Software Engineer at Acme Inc., I was responsible for
-            leading the development of the company's flagship web application. I
+            As a Senior Software Engineer at Acme Inc.I was responsible for
+            leading the development of the companys flagship web application. I
             designed and implemented new features, optimized performance, and
             mentored junior developers on the team. I also played a key role in
             transitioning the application to a microservices architecture,
@@ -49,7 +49,7 @@ export default function Component() {
           </p>
           <p className="text-muted-foreground">
             As a Junior Software Engineer at Stark Industries, I worked on
-            building and maintaining web applications for the company's internal
+            building and maintaining web applications for the companys internal
             and external customers. I gained valuable experience in full-stack
             development, working with various technologies and frameworks, and
             collaborating with senior engineers to deliver high-quality
