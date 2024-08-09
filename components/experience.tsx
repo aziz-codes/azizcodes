@@ -5,12 +5,12 @@ export default function Component() {
   return (
     <Card className="w-full max-w-full bg-[#1E1E1E]">
       <CardHeader className="flex items-center gap-4">
-        <Avatar>
+        <Avatar className="h-24 w-24">
           <AvatarImage src={ProfileImage.src} alt="Developer Avatar" />
           <AvatarFallback>JD</AvatarFallback>
         </Avatar>
         <div>
-          <h2 className="text-2xl font-bold">Noor Aziz</h2>
+          <h2 className="text-2xl font-bold text-center">Noor Aziz</h2>
           <p className="text-muted-foreground">Frontend Web Developer</p>
         </div>
       </CardHeader>

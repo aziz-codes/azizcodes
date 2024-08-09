@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Next.js Portfolio Theme Documentation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+      }
+      h2 {
+        color: #2c3e50;
+      }
+      h4 {
+        color: #34495e;
+      }
+      ul {
+        margin-bottom: 20px;
+      }
+      a {
+        color: #2980b9;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Next.js Portfolio Theme - Inspired by VS Code</h2>
+
+    <p>
+      This portfolio template is built with Next.js and TypeScript, drawing
+      inspiration from the look and feel of Visual Studio Code. It’s designed to
+      be easily customizable and extendable, with a focus on clean code and
+      modular structure.
+    </p>
+
+    <h4>Tools Used</h4>
+    <label>These are the top-level technologies used in this build:</label>
+    <ul>
+      <li>TypeScript</li>
+      <li>Tailwind CSS</li>
+      <li>shadcn</li>
+      <li>React Context (for global state management)</li>
+    </ul>
+
+    <h4>Additional Libraries</h4>
+    <label
+      >These libraries are used for various purposes such as animations and
+      dependencies:</label
+    >
+    <ul>
+      <li>React Syntax Highlighter</li>
+      <li>cmdk (dev dependency for shadcn command)</li>
+      <li>Framer Motion for animations</li>
+      <li>next-themes</li>
+      <li>Lucide for icons</li>
+      <li>react-github-calendar (for GitHub contributions)</li>
+    </ul>
+
+    <h3>Project Folder and File Structure</h3>
+    <p>
+      The application follows best practices, making customization easier. The
+      folders and files are named intuitively, so you can easily understand
+      their purpose.
+    </p>
+    <label><b>Key Folders:</b></label>
+    <ul>
+      <li><b>components:</b> Contains all the reusable components.</li>
+      <li>
+        <b>constants:</b> Houses all the app-wide data and configurations.
+      </li>
+      <li>
+        <b>layouts:</b> Includes layout components used across different pages.
+      </li>
+      <li>
+        <b>app:</b> All the routes are inside this directory, with some grouped
+        together for better organization.
+      </li>
+    </ul>
+
+    <h4>Images</h4>
+    <ul>
+      <li>
+        All images are placed inside the <code>/public/images</code> folder.
+      </li>
+      <li>
+        There is an additional file in <code>/constants/images.ts</code> that
+        imports and exports images to simplify usage.
+      </li>
+    </ul>
+
+    <h4>Constants</h4>
+    <ul>
+      <li>
+        The <code>constants</code> folder contains all the data used across the
+        app.
+      </li>
+      <li>
+        Proper naming conventions are followed to make customization easier.
+      </li>
+    </ul>
+
+    <h4>Components</h4>
+    <ul>
+      <li>
+        All reusable components are placed inside the
+        <code>components</code> directory.
+      </li>
+      <li>
+        The <code>/components/ui</code> folder is used for shadcn components.
+        You don’t need to modify these unless you want to change the shadcn
+        components.
+      </li>
+    </ul>
+
+    <h4>Context</h4>
+    <ul>
+      <li>
+        The <code>context</code> folder contains a single React Context for
+        state management.
+      </li>
+    </ul>
+
+    <h4>Root Layout</h4>
+    <ul>
+      <li><code>layout.tsx</code> is the entry point of the application.</li>
+      <li>
+        This file is configured to render child routes within a specific layout
+        that includes a navbar, two sidebars, and a main section.
+      </li>
+      <li>
+        Two wrappers are used: one combines the two sidebars (which need to be
+        client-side rendered due to user interactions), and the other is a route
+        wrapper, which is also a client component.
+      </li>
+    </ul>
+
+    <h4>Home Page (<code>page.tsx</code>)</h4>
+    <ul>
+      <li>
+        This is the root of the application, containing personal data of the
+        developer.
+      </li>
+      <li>
+        You can easily modify the content inside or customize the layout as
+        needed.
+      </li>
+    </ul>
+
+    <h4>Modifications</h4>
+    <h5>GitHub Configuration</h5>
+    <ul>
+      <li>Open <code>/app/github.page.tsx</code>.</li>
+      <li>
+        This page has two components. Open each component to find a
+        <code>username</code> variable.
+      </li>
+      <li>
+        Change the <code>username</code> variable to your GitHub username.
+      </li>
+    </ul>
+
+    <h5>Project Details</h5>
+    <ul>
+      <li>To add your projects, go to <code>/app/projects/page.tsx</code>.</li>
+      <li>
+        In this file, you will find an import statement:
+        <code>import { projects } from "@/constants/projects";</code>
+      </li>
+      <li>
+        Navigate to <code>/constants/projects</code> and add your project
+        details.
+      </li>
+    </ul>
+
+    <h5>Project Dropdown in Sidebar</h5>
+    <ul>
+      <li>
+        There is another array exporting from <code>/constants/projects/</code>.
+      </li>
+      <li>
+        You will see an array named <code>projectFiles</code> that lists
+        projects displayed in the sidebar under the Project tab.
+      </li>
+      <li>
+        Change the labels as per your project names, and you are good to go.
+      </li>
+    </ul>
+
+    <h5>General Advice</h5>
+    <p>
+      Rest of the pages, components, and files are grouped and named for better
+      understanding. Explore each route and check the imports and components
+      rendering there to easily make modifications.
+    </p>
+
+    <p>
+      If you encounter any issues with editing the theme files, feel free to
+      contact me through the source website or leave a message at
+      <a href="mailto:azizcodes42@gmail.com">azizcodes42@gmail.com</a>.
+    </p>
+
+    <h4>Copyright & Credits</h4>
+    <p>
+      &copy; 2024, Aziz (@azizcodes). All rights reserved. This theme is
+      inspired by Visual Studio Code. Feel free to customize and use it as per
+      your needs, but please give proper credit.
+    </p>
+
+    <p>Happy coding!</p>
+  </body>
+</html>

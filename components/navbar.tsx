@@ -60,8 +60,8 @@ const Navbar = () => {
         {links.map((link) => (
           <Link
             href={`/${link}`}
-            className={`text-[10px] xl:text-sm px-2 py-0.5 rounded-sm hover:bg-[#3f3f3f] ${
-              pathName === `/${link}` && "text-slate-400"
+            className={`text-[10px] xl:text-sm px-2 text-gray-400 py-0.5 rounded-sm hover:bg-[#3f3f3f] ${
+              pathName === `/${link}` && "text-gray-100"
             }`}
             key={link}
           >
