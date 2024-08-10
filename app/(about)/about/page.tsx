@@ -44,13 +44,14 @@ const About = () => {
         transition={{ duration: 0.5, delay: 0.6 }}
         className="text-center relative top-5 line-clamp-6 max-w-2xl text-gray-400 font-[200]"
       >
-        I am a Frontend Web Developer specializing in creating dynamic,
-        user-centered websites and applications. Adept at translating complex
-        design concepts into responsive, high-performance code. Passionate about
-        crafting seamless user experiences with a keen eye for detail and a
-        strong understanding of modern web technologies. Experienced in
-        collaborating with cross-functional teams to deliver innovative
-        solutions and enhance digital interactions.
+        I’m a Frontend Developer who brings design to life with React and
+        Next.js. My passion lies in crafting intuitive and visually captivating
+        interfaces that don’t just look good—they work seamlessly. Whether it's
+        transforming complex ideas into responsive, high-performance code or
+        enhancing digital interactions, I thrive on creating experiences that
+        users love. Collaboration is at the heart of what I do, working closely
+        with cross-functional teams to push the boundaries of what’s possible on
+        the web.
       </motion.p>
 
       {/* Animated Social Icons */}
