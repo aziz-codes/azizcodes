@@ -8,8 +8,6 @@ import React, {
 } from "react";
 
 interface ListContextType {
-  lists: any[];
-  setLists: React.Dispatch<React.SetStateAction<any[]>>;
   activeComponent: string;
   setActiveComponent: React.Dispatch<React.SetStateAction<string>>;
   open: boolean;
@@ -18,8 +16,6 @@ interface ListContextType {
 
 // Create a default value for the context
 const defaultState: ListContextType = {
-  lists: [{ component: "he", ready: true }],
-  setLists: () => {},
   activeComponent: "about",
   setActiveComponent: () => {},
   open: false,
@@ -33,7 +29,6 @@ const AppContext = createContext<ListContextType>(defaultState);
 export const AppContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [lists, setLists] = useState<any[]>([]);
   const [activeComponent, setActiveComponent] = useState<string>("about");
   const [open, setOpen] = useState(false);
 
@@ -50,8 +45,6 @@ export const AppContextProvider: React.FC<{ children: ReactNode }> = ({
   return (
     <AppContext.Provider
       value={{
-        lists,
-        setLists,
         activeComponent,
         setActiveComponent,
         open,
