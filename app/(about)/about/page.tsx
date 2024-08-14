@@ -47,11 +47,11 @@ const About = () => {
         I&apos;m a Frontend Developer who brings design to life with React and
         Next.js. My passion lies in crafting intuitive and visually captivating
         interfaces that don&apos;t just look good—they work seamlessly. Whether
-        it's transforming complex ideas into responsive, high-performance code
-        or enhancing digital interactions, I thrive on creating experiences that
-        users love. Collaboration is at the heart of what I do, working closely
-        with cross-functional teams to push the boundaries of what&apos;s
-        possible on the web.
+        it&apos;s transforming complex ideas into responsive, high-performance
+        code or enhancing digital interactions, I thrive on creating experiences
+        that users love. Collaboration is at the heart of what I do, working
+        closely with cross-functional teams to push the boundaries of
+        what&apos;s possible on the web.
       </motion.p>
 
       {/* Animated Social Icons */}
