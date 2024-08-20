@@ -32,15 +32,15 @@ const UniversityCard = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex items-center space-x-3 my-2">
               <School className="w-6 h-6 text-gray-400" />
-              <p className="text-lg text-gray-300">DEF University</p>
+              <p className="text-lg text-gray-300">FUUAST Islamabad</p>
             </div>
             <div className="flex items-center space-x-3 my-2">
               <Calendar className="w-6 h-6 text-gray-400" />
-              <p className="text-lg text-gray-300">2014 - 2018</p>
+              <p className="text-lg text-gray-300">2017 - 2021</p>
             </div>
             <div className="flex items-center space-x-3 my-2">
               <ClipboardList className="w-6 h-6 text-gray-400" />
-              <p className="text-lg text-gray-300">GPA: 3.9/4.0</p>
+              <p className="text-lg text-gray-300">GPA: 2.6</p>
             </div>
             <div className="flex items-center space-x-3 my-2">
               <BookOpen className="w-6 h-6 text-gray-400" />

@@ -18,7 +18,8 @@ import Link from "next/link";
 import { links } from "@/constants/nav-links";
 import { suggestions } from "@/constants/command-list";
 import { LayoutPanelLeft, Menu, Search } from "lucide-react";
-
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Avatar as DP } from "@/constants/images";
 const Navbar = () => {
   const { open: sidebarOpen, setOpen: setSidebarOpen } = useStore();
   const [openMenu, setOpneMenu] = React.useState(false);
@@ -55,8 +56,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="h-7 shadow-md w-full bg-bgNavbar border-b !sticky select-none top-0 left-0 z-50 flex items-center justify-between px-2 gap-5">
+    <div className="h-7 shadow-md w-full bg-bgNavbar border-b !sticky select-none top-0 left-0 z-50 flex items-center justify-between px-3 gap-5">
       <div className="space-x-1 items-center   hidden md:flex">
+        <Avatar
+          className="h-4 w-4 rounded-full p-0 cursor-pointer relative hidden md:block"
+          onClick={() => router.push("/")}
+        >
+          <AvatarImage src={DP.src} />
+          <AvatarFallback>az</AvatarFallback>
+          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
+        </Avatar>
         {links.map((link) => (
           <Link
             href={`/${link}`}
@@ -69,16 +78,25 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-
-      <div
-        className="md:hidden hover:bg-[#3f3f3f] flex items-center justify-center h-5 w-5 relative"
-        ref={menuRef}
-      >
-        <Menu
-          strokeWidth={1.5}
-          className="w-3 h-3 cursor-pointer"
-          onClick={() => setOpneMenu(!openMenu)}
-        />
+      <div className="flex items-center space-x-1">
+        <Avatar
+          className="h-4 w-4 rounded-full p-0 cursor-pointer relative block md:hidden"
+          onClick={() => router.push("/")}
+        >
+          <AvatarImage src={DP.src} />
+          <AvatarFallback>az</AvatarFallback>
+          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
+        </Avatar>
+        <div
+          className="md:hidden hover:bg-[#3f3f3f] flex items-center justify-center h-5 w-5 relative"
+          ref={menuRef}
+        >
+          <Menu
+            strokeWidth={1.5}
+            className="w-4 h-4 cursor-pointer"
+            onClick={() => setOpneMenu(!openMenu)}
+          />
+        </div>
         {openMenu && (
           <motion.div
             className="flex flex-col gap-2 h-auto py-3 rounded-md w-44 absolute top-6 shadow-lg px-3 left-2 bg-bgMain  border-2"
