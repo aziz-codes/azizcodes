@@ -1,7 +1,8 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Avatar as ProfileImage } from "@/constants/images";
-
+import { experience } from "@/constants/experience";
+import { MapPinIcon } from "lucide-react";
 export default function Component() {
   return (
     <Card className="w-full max-w-full bg-[#1E1E1E]">
@@ -16,21 +17,21 @@ export default function Component() {
         </div>
       </CardHeader>
       <CardContent className="space-y-8">
-        <div>
-          <h3 className="text-xl font-semibold">Acme Inc.</h3>
-          <p className="text-muted-foreground">
-            Senior Software Engineer, 2020 - Present
-          </p>
-          <p className="text-muted-foreground">
-            As a Senior Software Engineer at Acme Inc. I was responsible for
-            leading the development of the company&apos;s flagship web
-            application. I designed and implemented new features, optimized
-            performance, and mentored junior developers on the team. I also
-            played a key role in transitioning the application to a
-            microservices architecture, improving scalability and reliability.
-          </p>
-        </div>
-        <div>
+        {experience.map((exp, index) => (
+          <div key={index} className="flex flex-col gap-2">
+            <h3 className="text-sm font-semibold capitalize">{exp.company}</h3>
+            <p className="text-slate-600 capitalize text-sm">
+              {exp.designation} ({exp.tenure})
+            </p>
+            <div className="flex items-center">
+              <MapPinIcon className="w-4 h-4 text-gray-400" />
+              <span className="text-xs">{exp.location}</span>
+            </div>
+            <p className="text-muted-foreground text-sm">{exp.description}</p>
+          </div>
+        ))}
+
+        {/* <div>
           <h3 className="text-xl font-semibold">Globex Corporation</h3>
           <p className="text-muted-foreground">
             Software Engineer, 2018 - 2020
@@ -56,7 +57,7 @@ export default function Component() {
             frameworks, and collaborating with senior engineers to deliver
             high-quality software.
           </p>
-        </div>
+        </div> */}
       </CardContent>
     </Card>
   );
