@@ -10,8 +10,8 @@ import RouterWrapper from "@/route-wrapper";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "VS Code portfolio theme",
-  description: "A perfect choice for developers",
+  title: "Aziz-Dev",
+  description: "my personal porfolio",
 };
 
 export default function RootLayout({
