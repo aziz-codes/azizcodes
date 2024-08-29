@@ -9,9 +9,9 @@ const HomePage = () => {
     <div className="flex items-center  h-screen flex-col gap-2">
       <Avatar className="h-28 w-28 mt-20 ring-2 ring-[#333333]">
         <AvatarImage src={User.src} />
-        <AvatarFallback>NA</AvatarFallback>
+        <AvatarFallback>AZ</AvatarFallback>
       </Avatar>
-      <h4 className="font-semibold">Noor Aziz</h4>
+      <h4 className="font-semibold">Aziz</h4>
       <p className="text-sm font-light">Frontend Web Developer</p>
       <div className="flex items-center text-[10px] space-x-2">
         <p>Quick search</p>
@@ -40,3 +40,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

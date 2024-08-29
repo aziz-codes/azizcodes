@@ -31,7 +31,7 @@ const About = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="font-[500]"
       >
-        Noor Aziz
+        Aziz
       </motion.h4>
 
       {/* Animated Role */}
