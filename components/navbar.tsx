@@ -20,6 +20,7 @@ import { suggestions } from "@/constants/command-list";
 import { LayoutPanelLeft, Menu, Search } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Avatar as DP } from "@/constants/images";
+
 const Navbar = () => {
   const { open: sidebarOpen, setOpen: setSidebarOpen } = useStore();
   const [openMenu, setOpneMenu] = React.useState(false);
@@ -39,6 +40,7 @@ const Navbar = () => {
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, []);
+
   const handleItemClick = (path: string) => {
     router.push(path);
     setOpen(false);
@@ -56,8 +58,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="h-7 shadow-md w-full bg-bgNavbar border-b !sticky select-none top-0 left-0 z-50 flex items-center justify-between px-3 gap-5">
-      <div className="space-x-1 items-center   hidden md:flex">
+    <div className="h-7 shadow-md w-full bg-bgNavbar border-b sticky select-none top-0 left-0 z-50 flex items-center justify-between px-3 gap-5">
+      <div className="space-x-1 items-center hidden md:flex">
         <Avatar
           className="h-4 w-4 rounded-full p-0 cursor-pointer relative hidden md:block"
           onClick={() => router.push("/")}
@@ -78,6 +80,26 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
+
+      {/* Centered command input */}
+      <div className="flex items-center justify-center w-full max-w-md">
+        <div
+          className="flex items-center border px-2 py-[1px] space-x-2 rounded-sm bg-transparent flex-1 border-[#3f3f3f] justify-between cursor-pointer hover:bg-muted hover:border-slate-700 w-full"
+          onClick={() => setOpen(true)}
+        >
+          <Search className="w-4 h-4 text-muted-foreground" />
+          <p className="text-[10px] text-muted-foreground">
+            Press
+            <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded px-1.5 font-semibold text-[10px] font-medium text-muted-foreground opacity-100">
+              <span className="text-xs">⌘</span>J
+            </kbd>
+          </p>
+          <div></div>
+        </div>
+      </div>
+
+      {/* End of command input */}
+
       <div className="flex items-center space-x-1">
         <Avatar
           className="h-4 w-4 rounded-full p-0 cursor-pointer relative block md:hidden"
@@ -120,59 +142,6 @@ const Navbar = () => {
           </motion.div>
         )}
       </div>
-
-      <>
-        <div
-          className="flex items-center border px-2 py-[1px] space-x-2 rounded-sm bg-transparent flex-1  border-[#3f3f3f] justify-between cursor-pointer hover:bg-muted hover:border-slate-700 w-full max-w-sm"
-          onClick={() => setOpen(true)}
-        >
-          <Search className="w-4 h-4 text-muted-foreground " />
-          <p className="text-[10px] text-muted-foreground ">
-            Press
-            <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded   px-1.5  font-semobild text-[10px] font-medium text-muted-foreground opacity-100">
-              <span className="text-xs">⌘</span>J
-            </kbd>
-          </p>
-          <div></div>
-        </div>
-        <CommandDialog open={open} onOpenChange={setOpen}>
-          <CommandInput placeholder="Explore the portfolio" />
-          <CommandList>
-            <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Suggestions">
-              {suggestions.map((suggestion, index) => {
-                const Icon = suggestion.icon;
-                return (
-                  <CommandItem
-                    className="!py-1 my-2  cursor-pointer"
-                    key={index}
-                  >
-                    <div
-                      className="flex items-center space-x-2"
-                      onClick={() => handleItemClick(suggestion.path)}
-                    >
-                      <Icon className="!w-4 !h-4" strokeWidth={0.9} />
-                      <span className="text-xs">{suggestion.label}</span>
-                    </div>
-                  </CommandItem>
-                );
-              })}
-            </CommandGroup>
-            <CommandSeparator />
-            <CommandGroup heading="Projects">
-              {projects.map((project, index) => (
-                <CommandItem className="!py-1 my-2  cursor-pointer" key={index}>
-                  <div
-                    onClick={() => handleItemClick(`/projects/${project.id}`)}
-                  >
-                    <span className="text-xs">{project.title}</span>
-                  </div>
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
-        </CommandDialog>
-      </>
 
       <div className="justify-end flex items-center">
         <div
