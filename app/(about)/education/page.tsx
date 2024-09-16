@@ -15,6 +15,8 @@ import {
   threeSvg,
   nodejsSvg,
   mongdbSvg,
+  jsSvg
+
 } from "@/constants/svgs";
 const UniversityCard = () => {
   return (
@@ -38,10 +40,7 @@ const UniversityCard = () => {
               <Calendar className="w-6 h-6 text-gray-400" />
               <p className="text-lg text-gray-300">2017 - 2021</p>
             </div>
-            <div className="flex items-center space-x-3 my-2">
-              <ClipboardList className="w-6 h-6 text-gray-400" />
-              <p className="text-lg text-gray-300">GPA: 2.6</p>
-            </div>
+
             <div className="flex items-center space-x-3 my-2">
               <BookOpen className="w-6 h-6 text-gray-400" />
               <p className="text-lg text-gray-300">Major: Computer Science</p>
@@ -55,23 +54,17 @@ const UniversityCard = () => {
 
             <div className="my-4">
               <div className="flex items-center space-x-3 my-2">
-                <Projector className="w-6 h-6 text-blue-400" />
-                <p className="text-lg text-gray-300">E-commerce Website</p>
+                <Projector className="w-7 h-7 text-blue-400" />
+                <p className="text-lg text-gray-400">Mobile Shopping Website</p>
               </div>
               <p className="ml-9 mt-2 text-gray-400 text-base leading-relaxed">
-                Built a full-stack e-commerce website with user authentication,
-                product listings, and a shopping cart. Integrated Stripe for
-                payment processing and MongoDB for database management.
+                Online Mobile Shop (OMS), an online platform for mobile buyers and suppliers, where suppliers will upload their products, buyers can search through products and can place order,
+                implemented add to cart, search, order status, filter products functionalities.
               </p>
               <div className="flex items-center space-x-3 mt-5 ml-9 ">
                 <h4>Tech: </h4>
-                <div className="flex space-x-2">
-                  {reactSvgLg}
-                  {tsSvg}
-                  {tailwindSvg}
-                  {mongdbSvg}
-                  {nodejsSvg}
-                  {threeSvg}
+                <div className="flex space-x-2 text-gray-400">
+                  HTML, CSS, Bootstrap, Javascript, PHP, MYSQL
                 </div>
               </div>
             </div>
