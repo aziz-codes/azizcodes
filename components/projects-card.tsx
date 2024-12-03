@@ -66,6 +66,7 @@ const ProjectCard = ({ project }: { project: ProjectProps; index: number }) => {
           ) : (
             <Link
               href={project.link}
+              onClick={(e)=>e.stopPropagation()}
               className="flex items-center space-x-2 hover:text-blue-500 transition-colors duration-150 ease-out"
             >
               <Label className="cursor-pointer hidden md:block">
