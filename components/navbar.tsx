@@ -118,9 +118,10 @@ const Navbar = () => {
                         <CommandItem
                           className="!py-1 my-2  cursor-pointer"
                           key={index}
+                          onClick={() => handleItemClick(suggestion.path)}
                         >
                           <div
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-2 h-full w-full"
                             onClick={() => handleItemClick(suggestion.path)}
                           >
                             <Icon className="!w-4 !h-4" strokeWidth={0.9} />
@@ -133,8 +134,11 @@ const Navbar = () => {
                   <CommandSeparator />
                   <CommandGroup heading="Projects">
                     {projects.map((project, index) => (
-                      <CommandItem className="!py-1 my-2  cursor-pointer" key={index}>
+                      <CommandItem className="!py-1 my-2  cursor-pointer" key={index}
+                      
+                      >
                         <div
+                        className="h-full w-full"
                           onClick={() => handleItemClick(`/projects/${project.id}`)}
                         >
                           <span className="text-xs">{project.title}</span>
