@@ -52,7 +52,7 @@ export const projects = [
       "This versatile e-learning platform, developed with React, Bootstrap, and Redux Toolkit, offers a streamlined educational experience. It supports different user roles, catering to students, teachers, and administrators, each with tailored functionalities and interfaces. The platform ensures efficient course management, interactive learning, and seamless user interaction, providing a comprehensive solution for modern online education. ",
 
     tools: [reactSvgLg, bootstrapSvg, framerSvg],
-    link: "#",
+    link: "https://wiserbee.ca/",
     githubLink: false,
   },
 
