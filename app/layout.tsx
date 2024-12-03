@@ -10,8 +10,8 @@ import RouterWrapper from "@/route-wrapper";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Aziz-Dev",
-  description: "my personal porfolio",
+  title: "Aziz",
+  description: "Frontend Web Developer",
 };
 
 export default function RootLayout({
