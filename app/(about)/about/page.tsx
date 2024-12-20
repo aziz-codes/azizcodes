@@ -9,9 +9,9 @@ import LeetCode from "@/components/leetcode";
 
 const About = () => {
   const socialIconsWithLeetCode = [
-    ...socialIcons.slice(0, 1), // All icons before index 1
-    { icon: LeetCode, link: "https://leetcode.com/u/azizcodes/" }, // Add LeetCode SVG as a React component
-    ...socialIcons.slice(1), // All icons after index 1
+    ...socialIcons.slice(0, 1), 
+    { icon: LeetCode, link: "https://leetcode.com/u/azizcodes/",title:"Leetcode" }, 
+    ...socialIcons.slice(1),  
   ];
   return (
     <div className="mt-20 flex min-h-screen space-y-1 items-center flex-col">
@@ -67,17 +67,15 @@ const About = () => {
         transition={{ duration: 0.5, delay: 0.8 }}
         className="relative top-14 flex items-center space-x-7"
       >
-        
         {socialIconsWithLeetCode.map((icon, index) => {
           const Icon = icon.icon;
-         
+
           return (
-            <Link href={icon.link} key={index} target="_blank">
+            <Link href={icon.link} key={index} target="_blank" title={icon.title}>
               <Icon className="w-5 text-bgSidebar hover:text-gray-400 hover:scale-125 transition-all duration-300 ease-in-out" />
             </Link>
           );
         })}
-        
       </motion.div>
     </div>
   );
