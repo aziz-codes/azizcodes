@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BookOpen, CalendarDays, MapPin } from "lucide-react";
+import Link from "next/link";
 
 interface UserProps {
   avatar: string;
@@ -71,7 +72,7 @@ const UserCard = () => {
           </div>
           <div className="flex flex-col items-center sm:items-start">
             <h5 className="font-semibold">{user?.name}</h5>
-            <p className="text-xs italic ">{user?.username}</p>
+            <Link target="_blank" href="https://www.github.com/aziz-codes" className="text-xs italic ">{user?.username}</Link>
             <p className="w-auto max-w-xs line-clamp-2 md:line-clamp-3 text-[10px] text-muted-foreground">
               {user?.bio}
             </p>
