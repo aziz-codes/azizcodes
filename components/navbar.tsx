@@ -75,7 +75,7 @@ const Navbar = () => {
           onClick={() => router.push("/")}
         >
           <AvatarImage src={DP.src} />
-          <AvatarFallback>az</AvatarFallback>
+          <AvatarFallback className="text-xs">az</AvatarFallback>
           <div className="absolute bottom-0 right-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
         </Avatar>
         {links.map((link) => ( 
