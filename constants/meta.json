@@ -1,11 +1,9 @@
 {
   "name": "Aziz",
-  "age": 26,
   "education": "BSCS",
   "location": "Islamabad",
   "experience": "3 years",
   "hobbies": ["soccer", "gaming"],
-  "languages": ["english", "urdu", "khowar"],
   "skills": {
     "databases": ["Mongodb", "SQL", "PostgreSql"],
     "backend": ["Node JS", "PHP", "Express", "Sockets", "Next JS"],
