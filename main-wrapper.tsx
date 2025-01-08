@@ -5,7 +5,7 @@ import AsideSm from "@/components/aside-sm";
 import { useStore } from "@/context/context-provider";
 
 const MainWrapper = () => {
-  const { open } = useStore();
+  const { open, width } = useStore();
   return (
     <>
       <div className="flex">
@@ -13,7 +13,11 @@ const MainWrapper = () => {
           <AsideSm />
         </div>
         {open && (
-          <div className="w-48 border-r h-screen bg-[#252526]  fixed left-12 ">
+          <div
+            className={`${
+              width <= 768 && "top-7 left-12 absolute z-50 w-screen "
+            } w-48 border-r h-screen bg-[#252526]  fixed left-12 `}
+          >
             <AsideLg />
           </div>
         )}
