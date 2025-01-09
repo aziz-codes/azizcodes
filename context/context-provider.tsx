@@ -6,6 +6,7 @@ import React, {
   ReactNode,
   useEffect,
 } from "react";
+import { usePathname } from "next/navigation";
 
 interface ListContextType {
   activeComponent: string;
@@ -23,14 +24,39 @@ const defaultState: ListContextType = {
 };
 
 // Create the context
-const AppContext = createContext<ListContextType>(defaultState);
+const AppContext = createContext<ListContextType | any>(defaultState);
 
 // Create a provider component
 export const AppContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [activeComponent, setActiveComponent] = useState<string>("about");
+  const [width, setWidth] = useState<number | undefined>(undefined);
   const [open, setOpen] = useState(false);
+
+  const path = usePathname();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  useEffect(() => {
+    const handleRouteChange = () => {
+      if (width && width < 768) {
+        setOpen(false);
+      }
+      if (width && width > 800) {
+        setOpen(true);
+      }
+    };
+    handleRouteChange();
+  }, [width, path]);
 
   useEffect(() => {
     const handleKeyUp = (e: KeyboardEvent) => {
@@ -42,12 +68,15 @@ export const AppContextProvider: React.FC<{ children: ReactNode }> = ({
     return () => window.removeEventListener("keyup", handleKeyUp);
   }, []);
 
+  useEffect(() => {}, [path]);
+
   return (
     <AppContext.Provider
       value={{
         activeComponent,
         setActiveComponent,
         open,
+        width,
         setOpen,
       }}
     >
