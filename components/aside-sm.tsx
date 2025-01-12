@@ -21,12 +21,12 @@ const AsideSm = () => {
 
     const activeBtnIndex = lists.findIndex((item) => item.isActive === true);
     if (activeBtnIndex === idx) {
-      setOpen((prev) => !prev);
+      setOpen((prev: boolean) => !prev);
     } else {
       setOpen(true);
     }
   };
-  
+
   return (
     <div className="flex flex-col py-4 px-1  items-center  h-full justify-between">
       <div className="flex-col space-y-6   justify-center items-center">
