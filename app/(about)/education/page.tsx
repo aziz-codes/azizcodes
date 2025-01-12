@@ -3,31 +3,14 @@ import {
   GraduationCap,
   School,
   Calendar,
-  ClipboardList,
   BookOpen,
   Projector,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import {
-  reactSvgLg,
-  tsSvg,
-  tailwindSvg,
-  threeSvg,
-  nodejsSvg,
-  mongdbSvg,
-  jsSvg
-
-} from "@/constants/svgs";
 const UniversityCard = () => {
   return (
     <div className="bg-[#1E1E1E] text-white p-4 rounded-lg w-full  max-w-2xl xl:max-w-4xl mx-auto xl:my-12 my-3 relative">
-      <motion.div
-        className="bg-[#2C2C2C] p-8 rounded-lg shadow-lg relative"
-        whileHover={{ scale: 1.1 }}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <motion.div className="bg-[#2C2C2C] p-8 rounded-lg shadow-lg relative">
         <GraduationCap className="absolute -right-5 text-blue-500 -top-6 w-10 h-10 rotate-45" />
 
         <div className="ml-2">
@@ -58,8 +41,11 @@ const UniversityCard = () => {
                 <p className="text-lg text-gray-400">Mobile Shopping Website</p>
               </div>
               <p className="ml-9 mt-2 text-gray-400 text-base leading-relaxed">
-                Online Mobile Shop (OMS), an online platform for mobile buyers and suppliers, where suppliers will upload their products, buyers can search through products and can place order,
-                implemented add to cart, search, order status, filter products functionalities.
+                Online Mobile Shop (OMS), an online platform for mobile buyers
+                and suppliers, where suppliers will upload their products,
+                buyers can search through products and can place order,
+                implemented add to cart, search, order status, filter products
+                functionalities.
               </p>
               <div className="flex items-center space-x-3 mt-5 ml-9 ">
                 <h4>Tech: </h4>
