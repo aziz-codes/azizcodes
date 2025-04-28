@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar";
 import { AppContextProvider } from "@/context/context-provider";
 import MainWrapper from "../main-wrapper";
 import RouterWrapper from "@/route-wrapper";
+import ChatbotWidget from "@/components/chatbot";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -35,6 +36,9 @@ export default function RootLayout({
                 <MainWrapper />
 
                 <RouterWrapper>{children}</RouterWrapper>
+                <div className="fixed bottom-2 right-2">
+                  <ChatbotWidget />
+                </div>
               </div>
             </div>
           </AppContextProvider>

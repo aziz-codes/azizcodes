@@ -60,20 +60,21 @@
 
 /* Custom scrollbar  */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
+  border-radius: 20px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   height: 20px;
-  border-radius: 0;
+  border-radius: 20px;
   background-color: #686868;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #424242;
-  border-radius: 0;
+  border-radius: 20px;
 }
 
 /* Handle on hover */
