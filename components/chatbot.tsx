@@ -114,6 +114,7 @@ export default function ChatbotWidget() {
     "What's your experience?",
     "What's your name?",
     "Where do you work?",
+    "current company",
     "What skills do you have?",
   ];
   const handleTopQuestionClick = (question: string) => {
