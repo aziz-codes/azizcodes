@@ -215,18 +215,30 @@ export default function ChatbotWidget() {
               messages.map((message) => (
                 <div
                   key={message.id}
-                  className={`mb-4 flex !text-xs ${
+                  className={`mb-4 flex ${
                     message.sender === "user" ? "justify-end" : "justify-start"
-                  }`}
+                  } items-start gap-2`}
                 >
+                  {/* Show AI avatar */}
+                  {message.sender === "ai" && (
+                    <Image
+                      src={Dp}
+                      width={32}
+                      height={32}
+                      alt="ai avatar"
+                      unoptimized // <-- ADD THIS to prevent blur
+                      className="rounded-full object-cover -mt-5"
+                    />
+                  )}
+
                   <div
-                    className={`max-w-[80%] rounded-lg p-2 relative ${
+                    className={`max-w-[80%] rounded-lg p-3 relative ${
                       message.sender === "user"
                         ? "bg-blue-500 text-white"
                         : "bg-gray-200 text-gray-800"
                     }`}
                   >
-                    {/* Notch for the message bubble */}
+                    {/* Bubble Notch */}
                     <div
                       className={`absolute top-0 w-4 h-4 overflow-hidden ${
                         message.sender === "user"
@@ -238,10 +250,12 @@ export default function ChatbotWidget() {
                         className={`absolute transform rotate-45 w-2 h-2 ${
                           message.sender === "user"
                             ? "bg-blue-500 -top-1 -right-1"
-                            : "bg-gray-200 -top-1 -left-1"
+                            : "bg-gray-200 -top-1 left-1"
                         }`}
                       />
                     </div>
+
+                    {/* Message Text */}
                     <p className="text-xs">{message.content}</p>
                     <p className="text-xs mt-1 opacity-70">
                       {message.timestamp.toLocaleTimeString([], {
