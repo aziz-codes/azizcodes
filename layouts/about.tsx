@@ -74,7 +74,7 @@ const About = () => {
   return (
     <div className="flex flex-col select-none w-full">
       {folders.map((folder, index) => (
-        <>
+        <React.Fragment key={index}>
           <div
             key={index}
             className="flex items-center py-1 px-3 space-x-1 cursor-pointer hover:bg-[#323233] text-sm"
@@ -115,7 +115,7 @@ const About = () => {
               ))}
             </motion.div>
           )}
-        </>
+        </React.Fragment>
       ))}
       <Link
         href="/meta"
