@@ -1,6 +1,7 @@
+"use client";
 import AvatarLoader from "@/components/avatar-loader";
 import UserCardSkeleton from "@/skeletons/user-card-skeleton";
-import { Loader2 } from "lucide-react";
+
 import dynamic from "next/dynamic";
 
 const Github = () => {
