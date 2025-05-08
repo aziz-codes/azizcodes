@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-
+@import "tailwindcss";
+@plugin 'tailwind-scrollbar';
 @source '../**/*.{ts,tsx}';
 
 @source '../**/*.{ts,tsx}';
