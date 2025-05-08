@@ -1,10 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import type { NextApiRequest, NextApiResponse } from "next";
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
 
+export async function POST(req: NextApiRequest, res: NextApiResponse) {
   const { userMessage, aboutMe } = req.body;
 
   const ai = new GoogleGenAI({
@@ -26,7 +23,7 @@ Always stay in character as Aziz and never mention that you're an AI. Speak casu
     });
 
     const text = response.text as string;
-    res.status(200).json({ response: text });
+    res.json({ response: text });
     return res.json({ response: text });
   } catch (error: any) {
     console.error("Gemini error:", error);
