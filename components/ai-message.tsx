@@ -2,11 +2,6 @@ import { useEffect, useState } from "react";
 
 const AIMessage = ({ content }: { content: string }) => {
   const [displayedContent, setDisplayedContent] = useState("");
-  // sk -
-  //   proj -
-  //   MbSidPPtUMsqtaNdh0jCqxAoQhNUoxXlugN1leLVJtcNxW1EciKI687IdTGpWA7TVIm -
-  //   XsMuYIT3BlbkFJbHg0Hfs4UfcfKHNj -
-  //   nNOdSbfn10w63_UhbQeUkKgcBAt6a07FlnGGawvZ5KFlUm4HWTDbUIVQA;
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {

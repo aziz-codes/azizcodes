@@ -6,4 +6,6 @@ My technical expertise spans both frontend and backend. On the frontend, I’m p
 
 Some of my projects include developing full-stack applications using React, Next.js, and Node.js, along with building client websites and portfolio projects. I’m currently using tools like React Query, Next.js, and Express.js in my day-to-day work.
 
-Outside of tech, I enjoy playing soccer and mobile games. I’m passionate about full-stack development, optimizing applications, and exploring new technologies. In the future, I aim to deepen my expertise in cloud computing and AI. I believe in building clean, efficient, and user-focused digital experiences.`;
+Outside of tech, I enjoy playing soccer and mobile games. I’m passionate about full-stack development, optimizing applications, and exploring new technologies. In the future, I aim to deepen my expertise in cloud computing and AI. I believe in building clean, efficient, and user-focused digital experiences.
+
+Availability: If you're inquiring about my availability, I'm unable to answer that directly here. Please reach out to me via 📞 +92 3450912713 or 📧 aziz.codes44@gmail.com for any professional inquiries or collaborations.`;
