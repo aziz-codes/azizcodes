@@ -1,81 +1,55 @@
-# VS Code Inspired Portfolio Template
+# aziz.dev
 
-This is a portfolio template built with Next.js and TypeScript, inspired by the VS Code interface. This project uses various packages and tools to create a sophisticated and visually appealing portfolio website.
+Personal portfolio of Aziz, Full Stack Engineer. It's styled like an engineering spec: numbered sections, a live system diagram, case studies, a `git log` career timeline, an `npm ls` skills tree, a ⌘K command palette and a Claude-style **Ask Aziz** assistant.
 
-## Table of Contents
+**Stack:** Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, shadcn-style primitives (Radix + cmdk), Motion, next-themes.
 
-- [Demo](#demo)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running the Development Server](#running-the-development-server)
-- [Contributing](#contributing)
-- [License](#license)
+## Getting started
 
-## Demo
+```bash
+pnpm install
+pnpm dev        # http://localhost:3000
+pnpm build && pnpm start
+```
 
-Check out the live demo of the portfolio template [here](#).
+Optional: set `GITHUB_TOKEN` to raise the GitHub API rate limit for the Open Source section (it's refreshed every 12h via ISR).
 
-## Features
+## Structure
 
-- Modern design inspired by VS Code
-- Built with Next.js and TypeScript
-- Responsive layout
-- Animated text and project cards
-- SVG icons for technologies
-- Search bar functionality
-- Integration with Tailwind CSS and shadcn for styling
-- Icons from Lucide for UI design
+```
+src/
+├── app/                      # Routes, metadata, OG image, sitemap, robots, icon
+│   └── work/[slug]/          # Statically generated case studies
+├── components/
+│   ├── chat/                 # Ask Aziz: panel, composer, messages, mini markdown
+│   ├── command/              # ⌘K command palette
+│   ├── layout/               # Header, footer, theme toggle, local time
+│   ├── providers/            # Theme + chat state
+│   ├── sections/             # Hero, work, experience, stack, open source, ask, contact
+│   └── ui/                   # Button, badge, dialog, command, section frame, reveal…
+├── content/                  # ← All copy lives here (profile, projects, experience, chat)
+├── hooks/                    # useHotkey, useMounted
+├── lib/                      # utils, GitHub fetcher, chat engine
+└── types/
+```
 
-## Technologies Used
+## Editing content
 
-- **Framework:** Next.js
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS, shadcn
-- **Icons:** Lucide
-- **Additional Libraries:** React, Redux/Toolkit, Framer Motion
+Everything you'd want to change is in `src/content/`:
 
-## Getting Started
+- `profile.ts`: name, intro, email, socials, stats, availability
+- `projects.ts`: case studies (adding an entry generates a new `/work/<slug>` page) and the "Also built" table
+- `experience.ts`: career timeline and stack tree
+- `chat.ts`: the assistant's questions, keywords and answers
 
-Follow these instructions to set up the project locally.
+## Making the assistant live
 
-### Prerequisites
+`lib/chat-engine.ts` is the only thing that produces answers. Replace `answerFor()` with a call to a route handler that streams from an LLM, and `ChatProvider` already renders streamed tokens.
 
-Make sure you have the following software installed on your machine:
+## Shortcuts
 
-- [Node.js](https://nodejs.org/) (version 14 or later)
-- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
-
-### Installation
-
-1. **Download the ZIP file:**
-
-   - Go to the repository page.
-   - Click on the "Code" button.
-   - Select "Download ZIP".
-
-2. **Extract the ZIP file:**
-
-   Extract the downloaded ZIP file to a directory of your choice.
-
-3. **Navigate to the project directory:**
-
-   ```bash
-   cd your-project-directory
-   ```
-
-4. **Install the dependencies**
-
-   ```bash
-   npm i
-
-   ```
-
-5. **Start the Development server by running**
-
-   ```bash
-   npm run dev
-
-   ```
+| Keys | Action |
+| ---- | ------ |
+| ⌘/Ctrl + K | Command palette |
+| ⌘/Ctrl + J | Open / close Ask Aziz |
+| Esc | Close panels |
