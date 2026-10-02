@@ -42,10 +42,9 @@ export async function POST(req: NextRequest) {
   const ai = new GoogleGenAI({
     apiKey: process.env.GOOGLE_API_KEY!,
   });
-
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: "auto",
       contents: `You are Aziz, responding to questions as yourself. Use the following user information to answer naturally: ${aboutMe}. The user's question is: '${userMessage}'.
 
 If the question is about Aziz's work, experience, skills, or background, answer briefly and confidently using the provided information — as if you're speaking directly to someone visiting your personal site.
@@ -63,7 +62,7 @@ Always stay in character as Aziz and never mention that you're an AI. Speak casu
     console.error("Gemini error:", error);
     return NextResponse.json(
       { error: error.message || "Something went wrong" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

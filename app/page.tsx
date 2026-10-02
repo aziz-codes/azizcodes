@@ -2,7 +2,8 @@ import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Avatar as User } from "@/constants/images";
 import Link from "next/link";
-import { Briefcase, Folder } from "lucide-react";
+import { Briefcase, Download, Folder } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const HomePage = () => {
   return (
@@ -19,21 +20,10 @@ const HomePage = () => {
         <p>+</p>
         <div className="px-2 py-0.5 rounded-md bg-secondary">J</div>
       </div>
-
-      <h4 className="text-sm">Browse</h4>
-      <Link
-        href="/projects"
-        className="flex items-center text-sky-500 text-xs space-x-2"
-      >
-        <Folder className="w-3 h-3" strokeWidth={1} />
-        <span className="text-[9px]">Projects</span>
-      </Link>
-      <Link
-        href="/experience"
-        className="flex items-center text-sky-500   space-x-2 ml-3"
-      >
-        <Briefcase className="w-3 h-3" strokeWidth={1} />
-        <span className="text-[9px]">Experience</span>
+      <Link href="/Aziz.pdf" target="_blank">
+        <Button variant="ghost" className="flex items-center gap-4">
+          <Download className="size-4" /> Download CV
+        </Button>
       </Link>
     </div>
   );

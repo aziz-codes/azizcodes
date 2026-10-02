@@ -12,6 +12,7 @@ import { aboutAziz, chatbotQuestions } from "@/constants/utils";
 import { AvatarImage, Avatar, AvatarFallback } from "./ui/avatar";
 import AIMessage from "./ai-message";
 import { GoogleGenAI } from "@google/genai";
+import Link from "next/link";
 
 type Message = {
   id: number;
@@ -30,10 +31,6 @@ export default function ChatbotWidget() {
 
   const toggleChat = () => setIsOpen(!isOpen);
 
-  const ai = new GoogleGenAI({
-    apiKey: "AIzaSyCp8oAyOciqQTzHs68VqzhO4I-ncvSMSZY",
-  });
-
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("/api/test");
@@ -44,34 +41,30 @@ export default function ChatbotWidget() {
     fetchData();
   }, []);
 
-  const getBotResponse = async (userMessage: string, aboutMe: string) => {
+  const getBotResponse = (userMessage: string, aboutMe: string) => {
     setNewMessage("");
     try {
-      setLoading(true);
-      const response = await fetch("/api/test", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ userMessage, aboutMe }),
-      });
-      const data = await response.json();
-      console.log(data);
-      setLoading(false);
-
-      console.log("response from google is ", response.text);
+      // setLoading(true);
+      // const response = await fetch("/api/test", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({ userMessage, aboutMe }),
+      // });
+      // const data = await response.json();
+      // console.log(data);
+      // setLoading(false);
 
       const aiMessage: Message = {
         id: messages.length + 2,
-        content: data.response,
+        content:
+          "I am under scheduled maintenance, please explore the site for any information, or drop an email at azizcodes@icloud.com ",
         sender: "ai",
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, aiMessage]);
-    } catch (err) {
-      setLoading(false);
-      console.log("api error is ", err);
-    }
+    } catch (err) {}
   };
 
   const handleSendMessage = async () => {
@@ -109,7 +102,7 @@ export default function ChatbotWidget() {
     setTimeout(() => {
       const lower = question.toLowerCase();
       const match = chatbotQuestions.find((item) =>
-        item.questions.some((q) => lower.includes(q.toLowerCase()))
+        item.questions.some((q) => lower.includes(q.toLowerCase())),
       );
       const reply = match
         ? aboutAziz[match.answerField]
@@ -257,7 +250,10 @@ export default function ChatbotWidget() {
                       1000 ? (
                       <AIMessage content={msg.content} />
                     ) : (
-                      <p className="text-xs">{msg.content}</p>
+                      <div className="">
+                        {/* {renderMessage(msg.content)} */}
+                        {msg.content}
+                      </div>
                     )}
 
                     <p className="text-xs mt-1 opacity-70">
