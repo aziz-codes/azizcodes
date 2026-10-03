@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { profile } from "@/content/profile";
 import { cn } from "@/lib/utils";
@@ -27,9 +27,10 @@ const methodColor: Record<string, string> = {
 
 export function RequestLog({ className }: { className?: string }) {
   const [items, setItems] = useState<(Entry & { id: number; time: string })[]>([]);
+  // Lives across effect re-runs (Strict Mode mounts twice) so ids never repeat.
+  const nextId = useRef(0);
 
   useEffect(() => {
-    let i = 0;
     const push = () => {
       const time = new Intl.DateTimeFormat("en-GB", {
         hour: "2-digit",
@@ -38,8 +39,8 @@ export function RequestLog({ className }: { className?: string }) {
         hour12: false,
         timeZone: profile.timezone,
       }).format(new Date());
-      const entry = { ...LINES[i % LINES.length], id: i, time };
-      i++;
+      const id = nextId.current++;
+      const entry = { ...LINES[id % LINES.length], id, time };
       setItems((prev) => [...prev.slice(-3), entry]);
     };
     push();
