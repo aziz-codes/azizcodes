@@ -52,3 +52,24 @@ export type ChatEntry = {
   keywords: string[];
   answer: string;
 };
+
+export type LabProduct = {
+  name: string;
+  kind: string;
+  status: Extract<ProjectStatus, "live" | "in-development">;
+  tagline: string;
+  summary: string;
+  highlights: string[];
+  install?: string;
+  stack: string[];
+  links: { label: string; href: string }[];
+  icon?: string;
+  image?: { src: string; alt: string; width: number; height: number; position?: string };
+};
+
+export type BenchItem = {
+  name: string;
+  kind: string;
+  summary: string;
+  stack: string[];
+};

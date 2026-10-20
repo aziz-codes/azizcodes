@@ -21,7 +21,7 @@ export async function OpenSource() {
   return (
     <Section
       id="open-source"
-      index="04"
+      index="05"
       label="Open source"
       title={
         <>

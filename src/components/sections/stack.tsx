@@ -9,7 +9,7 @@ export function StackSection() {
   return (
     <Section
       id="stack"
-      index="03"
+      index="04"
       label="Stack"
       title={
         <>

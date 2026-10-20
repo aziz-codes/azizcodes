@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowUpRight, AtSign, Briefcase, Copy, FileText, FolderGit2, Home, Layers, Mail, SunMoon } from "lucide-react";
+import { ArrowUpRight, AtSign, Briefcase, Copy, FileText, FlaskConical, FolderGit2, Home, Layers, Mail, SunMoon } from "lucide-react";
 import { navItems, profile } from "@/content/profile";
 import { projects } from "@/content/projects";
 import { useChat } from "@/components/providers/chat-provider";
@@ -33,7 +33,7 @@ export function useCommandMenu() {
   return ctx;
 }
 
-const navIcons = [Briefcase, FolderGit2, Layers, Mail];
+const navIcons = [Briefcase, FlaskConical, FolderGit2, Layers, Mail];
 
 function CommandMenu({ open, setOpen }: { open: boolean; setOpen: (open: boolean) => void }) {
   const router = useRouter();

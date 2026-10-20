@@ -51,6 +51,17 @@ He also has deep WordPress & WooCommerce experience from earlier client work.`,
 Each one has a full case study in the [Work section](/#work), plus more in the "Also built" list, like **ScoutAI**, a World Cup 2026 predictions app with streamed AI match analysis.`,
   },
   {
+    id: "lab",
+    prompt: "What is he building on the side?",
+    keywords: ["side", "lab", "building", "now", "currently", "kenning", "wirescope", "extension", "vscode", "npm", "package", "tools", "open source"],
+    answer: `Developer tools, shipped in public:
+
+- **Kenning** — a VS Code extension that turns every change Claude Code, Codex or Cursor makes into a quick review card, so you understand the code your AI writes. [On the Marketplace](https://marketplace.visualstudio.com/items?itemName=azizcodes.kenning).
+- **wirescope** — an in-app network inspector and API explorer for React, published on [npm](https://www.npmjs.com/package/wirescope).
+
+On the bench: **Tillora**, an AI-assisted POS & inventory dashboard template, and **Nuskha**, free in-browser Arabic PDF and OCR tools. More in the [Lab section](/#lab).`,
+  },
+  {
     id: "mobile",
     prompt: "Does he build mobile apps?",
     keywords: ["mobile", "react native", "expo", "android", "ios", "app", "native", "bilal", "travels"],
@@ -99,7 +110,7 @@ Try asking about:
 
 - **Who Aziz is** and his background
 - His **tech stack** and tools
-- **Projects** he's built, or **mobile** work
+- **Projects** he's built, his **side tools**, or **mobile** work
 - Whether he's **available for work**
 
 Or reach out directly through the [contact section](/#contact).`;
